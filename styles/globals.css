@@ -1,225 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-:root {
-	--fr: #1e123d;
-	--bg: #fff9f9;
-	--bg2: #fbe9e9;
-	--sec: #a42700;
-	--text: #414141;
-}
-html,
 body {
-	font-family: "Bebas Neue", sans-serif;
-	padding: 0;
-	margin: 0;
-	background-color: var(--bg);
-	color: var(--fr);
-	/* filter: blur(5px); */
+	background-color: rgb(245, 228, 199);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+		sans-serif;
 }
 .intro {
-	background-color: var(--fr);
-	color: var(--bg);
-	padding: 10%;
-	background: url("../public/bg.png") no-repeat;
-	background-size: cover;
-}
-body {
-	background-color: transparent;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(99, 95, 99);
+	color: white;
+	border-radius: 0.2vw;
+	padding: 1vw;
+	font-size: 2rem;
+	text-align: center;
 }
 button {
-	background-color: var(--sec);
-	color: var(--bg);
+	background-color: paleturquoise;
+	border: none;
+	font-size: 5rem;
 	cursor: pointer;
-	border: none;
-	font-size: 2rem;
-	border-radius: 0.1rem;
-	text-align: center;
-	padding: 0.5vw;
-}
-
-a {
-	color: inherit;
-	text-decoration: none;
-}
-
-* {
-	font-family: "Bebas Neue", sans-serif;
-	box-sizing: border-box;
-}
-p {
-	/* font-size: 2rem; */
-	margin: 0;
-	color: var(--text);
-}
-b {
-	color: var(--sec);
-}
-input {
-	border: none;
-}
-article {
-	font-size: 2rem;
-}
-table {
-	background-color: #fbe9e9bb;
-	padding: 0.4vw;
-	border: 0.2vw;
-	text-align: center;
-	margin: auto;
-}
-.floatRight {
-	float: right;
-}
-.floatLeft {
-	float: left;
-}
-.into {
-	text-align: center;
-}
-.content {
-	margin: 0 1vw;
-}
-.headerText {
-	font-size: 10rem;
-	text-shadow: -5px -5px 0.4vw var(--text);
-	text-align: center;
-	margin: 0;
-	padding: 0;
-}
-.pageHeader {
-	font-size: 10rem;
-	text-shadow: -5px -5px 3px #4141413d;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-}
-.subText {
-	color: var(--bg2);
-	margin: 0;
-	padding: 0 0 7vw;
-	font-size: 4.688rem;
-	text-align: center;
-}
-.subButtons {
-	/* make it spread apart */
-	display: flex;
-	text-align: center;
-	justify-content: space-evenly;
-}
-.leftText {
-	padding: 5vw 10vw;
-	width: 45vw;
-}
-.leftHeader {
-	font-size: 5rem;
-	margin: 5vh 0 0 0 !important;
-}
-.foodImg {
-	position: absolute;
-	right: 35vw;
-	top: 118%;
-	width: 24vw;
-	height: 16vw;
-}
-.rezerv {
-	background-color: var(--bg2);
-	padding: 1vw;
-}
-.rezervGrid {
-	width: 45vw;
-	padding: 0 2vw;
-
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-}
-.rezervGrid * {
-	font-size: 3rem;
-	margin: 0.1vw 0;
-}
-.submitRezerv {
-	width: 50%;
-	margin: 1vw;
-}
-.bottomInfo {
-	padding: 2vw;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	font-size: 2.813rem;
-}
-.extraInfo {
-	font-size: 1.875rem;
-}
-.nabidkaButton {
-	font-size: 4.688rem;
-}
-.otevDoba {
-	padding: 0 4vw;
-}
-.navMain {
-	font-size: 3.125rem;
-	height: 0 !important;
-	border-radius: 0 0 0 0.5vw;
-	color: rgba(255, 255, 255, 0.666);
-	float: right;
-}
-.nav {
-	height: 100%;
-	font-size: 3.125rem;
-	background-color: var(--fr);
-	border-radius: 0 0 0 0.5vw;
-	color: rgba(255, 255, 255, 0.666);
-	float: right;
-}
-.nav *,
-.navMain * {
-	padding: 0.5vw;
-}
-.nav *:hover,
-.navMain *:hover {
-	text-shadow: 5px 0px 0.5vw var(--bg2);
-}
-.orestauraciImg {
-	float: right;
-	width: 40%;
-}
-.orestauraciText {
-	font-size: 1.3rem;
-}
-.galerie {
-	margin: 20vh 0vw;
-	display: grid;
-	grid-template-columns: repeat(5, auto);
-	width: 100%;
-}
-.galerie img {
-	width: 80%;
-}
-.menu {
-	font-size: 2rem;
-}
-.smallPageHeader {
-	font-size: 5rem;
-	text-shadow: -5px -5px 3px #4141413d;
-	/* text-align: center; */
-	margin: 0;
-	padding: 0;
-}
-.nabidka {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: stretch;
-}
-.obedovaNabidka,
-.vecerniNabidka {
-	margin: 15vh 0;
-	text-align: center;
-	scale: 1.2;
-	padding: 1vw;
-	border-radius: 0.2vw;
-}
-.obedovaNabidka {
-	background-image: url("http://www.pizzasos.cz/wp-content/uploads/smazak.jpg");
-}
-
-.vecerniNabidka {
-	background-image: url("https://www.todoinprague.com/wp-content/uploads/2020/02/typical-czech-cuisine-svickova.jpg");
 }

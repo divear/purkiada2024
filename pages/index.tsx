@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import food from "../public/food.png"
 
 export default function Home() {
 	function rezerv() {
@@ -8,7 +7,11 @@ export default function Home() {
 	}
 	return (
 		<div>
-			<h1>Purkiada</h1>
+			<div className="intro">
+				<h1>Purkiada bug hunt</h1>
+				<p>Úloha číslo 4 nebo kolik idk</p>
+				<button onClick={() => window.location.href = "/hra"}>start</button>
+			</div>
 		</div >
 	);
 }
