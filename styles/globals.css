@@ -22,3 +22,13 @@ button {
 	font-size: 5rem;
 	cursor: pointer;
 }
+input {
+	font-size: 2rem;
+	display: grid;
+	margin: 2vw;
+}
+textarea {
+	font-size: 2rem;
+	background-color: black;
+	color: white;
+}
