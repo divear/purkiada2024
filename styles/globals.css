@@ -1,5 +1,10 @@
+:root {
+	--bg: #f5e4c7;
+	--sbg: #635f63;
+	--fr: #ffffff;
+}
 body {
-	background-color: rgb(245, 228, 199);
+	background-color: var(--bg);
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
 		sans-serif;
@@ -9,8 +14,8 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: rgb(99, 95, 99);
-	color: white;
+	background-color: var(--bg);
+	color: var(--fr);
 	border-radius: 0.2vw;
 	padding: 1vw;
 	font-size: 2rem;
@@ -31,4 +36,14 @@ textarea {
 	font-size: 2rem;
 	background-color: black;
 	color: white;
+}
+.errorLog {
+	position: fixed;
+	right: 10%;
+	top: 1%;
+	background-color: var(--sbg);
+	color: var(--fr);
+	padding: 1vw;
+	border-radius: 0.4vw;
+	font-size: 2rem;
 }
