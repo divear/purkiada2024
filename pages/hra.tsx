@@ -1,42 +1,62 @@
 import React, { useEffect, useState } from 'react'
+import data from "./data.json"
 
 function Hra() {
     const [codeVal, setCodeVal] = useState("")
+    const [level, setLevel] = useState(0)
+
     useEffect(() => {
-        setCodeVal(`#include <stdio.h>
-
-int main() {
-    int num = 5;
-    printf("Číslo: %d", num);
-
-    for (int i = 1; i <= 5; i++) {
-        printf("Iterace %d", i);
-    }
-
-    int result = 1;
-    for (int i = 1; i <= 5; i++) {
-        result *= i;
-    }
-    printf("Faktoriál z čísla 5 je %d", result);
-
-    return 0;
-}
-`)
+        console.log(data)
+        if (!data[level]) {
+            window.location.href = "/win"
+            return
+        }
+        setCodeVal(data[level].wrongCode)
     }, [])
+    function change(e: any) {
+        setCodeVal(e.target.value)
+        if (e.target.value == data[level].rightCode) {
+            alert("SPRÁVNĚ!!!!")
+        }
+    }
 
     return (
-        <div>
+        < div >
             <title>Purkiáda bug hunt</title>
-            <h1>Pomoz zpravit syntax errory po rekrutovi.</h1>
+            <h1>Level {level}</h1>
             <p>Protip: Compiler má vždy pravdu</p>
+            <p>Protip2: Neměň formátování</p>
+
+            <div className="container">
+                <div className="list">
+                    <ol>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                </div>
+                <div className="textarea">
+                    <textarea onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={40} rows={9}></textarea>
+                </div>
+            </div>
+
             <div className="errorLog">
                 <h2>Errory:</h2>
                 <ul>
-                    <li>Každý příkaz musí končit středníkem</li>
+                    {data[level] && data[level].errors.map(e => {
+                        return (
+                            <li>{e[1]} line: {e[0]}</li>
+                        )
+                    })}
                 </ul>
             </div>
-            <textarea onChange={e => setCodeVal(e.target.value)} spellCheck={false} value={codeVal} name="" id="" cols={50} rows={20} />
-        </div>
+        </ div>
     )
 }
 

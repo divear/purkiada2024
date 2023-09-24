@@ -1,0 +1,14 @@
+[
+	{
+		"name": "Ahoj, světe!",
+		"wrongCode": "#include <stdio.h>\nint main() {\n  printf(\"Hello, World!\")\n  return 0\n}",
+		"rightCode": "#include <stdio.h>\nint main() {\n  printf(\"Hello, World!\");\n  return 0;\n}",
+		"errors": [[3, "Každý příkaz musí končit středníkem"]]
+	},
+	{
+		"name": "Ahoj, světe!",
+		"wrongCode": "#include <stdio.h>\nint main() {\n  printf(\"Hello, World!\")\n  return 0\n}",
+		"rightCode": "#include <stdio.h>\nint main() {\n  printf(\"Hello, World!\");\n  return 0;\n}",
+		"errors": [[3, "Každý příkaz musí končit středníkem"]]
+	}
+]

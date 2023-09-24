@@ -14,7 +14,7 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: var(--bg);
+	background-color: var(--sbg);
 	color: var(--fr);
 	border-radius: 0.2vw;
 	padding: 1vw;
@@ -46,4 +46,46 @@ textarea {
 	padding: 1vw;
 	border-radius: 0.4vw;
 	font-size: 2rem;
+}
+
+.container {
+	position: relative;
+	margin: 20px;
+	font-family: "Lucida Console", Monaco, monospace;
+	line-height: 120%;
+	font-size: 2rem;
+}
+.container .list {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	width: 25px;
+	background-color: rgb(149, 149, 149);
+}
+.container .list ol {
+	margin: 0;
+	padding: 0;
+	list-style-position: inside;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+.container .list ol li {
+	padding-left: 2px;
+}
+.container .textarea {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+}
+.container .textarea textarea {
+	margin: 0;
+	padding: 0 0 0 30px;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	border: 1px solid black;
+	resize: horizontal;
 }
