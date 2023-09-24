@@ -49,9 +49,9 @@ function Hra() {
             <div className="errorLog">
                 <h2>Errory:</h2>
                 <ul>
-                    {data[level] && data[level].errors.map(e => {
+                    {data[level] && data[level].errors.map((e, i) => {
                         return (
-                            <li>{e[1]} line: {e[0]}</li>
+                            <li key={i}>{e[1]} line: {e[0]}</li>
                         )
                     })}
                 </ul>
