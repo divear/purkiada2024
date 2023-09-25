@@ -39,7 +39,7 @@ textarea {
 }
 .errorLog {
 	position: fixed;
-	right: 10%;
+	right: 5%;
 	top: 1%;
 	background-color: var(--sbg);
 	color: var(--fr);
@@ -88,4 +88,8 @@ textarea {
 	line-height: inherit;
 	border: 1px solid black;
 	resize: horizontal;
+}
+.napoveda {
+	position: fixed;
+	bottom: 1%;
 }

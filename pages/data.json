@@ -1,14 +1,20 @@
 [
 	{
 		"name": "Ahoj, světe!",
-		"wrongCode": "#include <stdio.h>\nint main() {\n  printf(\"Hello, World!\")\n  return 0\n}",
-		"rightCode": "#include <stdio.h>\nint main() {\n  printf(\"Hello, World!\");\n  return 0;\n}",
-		"errors": [[3, "Každý příkaz musí končit středníkem"]]
+		"wrongCode": "#include <stdio.h>\nint main() {\n  printf(\"Ahoj, Purkiádo!\")\n  return 0\n}",
+		"rightCode": "#include <stdio.h>\nint main() {\n  printf(\"Ahoj, Purkiádo!\");\n  return 0;\n}",
+		"errors": [[[3, 4], "Každý příkaz musí končit středníkem"]]
+	},
+	{
+		"name": "If statement!",
+		"wrongCode": "#include <stdio.h>\nint main() {\n  int number = 10;\n  if (number > 5) {\n    printf(\"Číslo je větší než pět);\n  }\n  return 0;\n}",
+		"rightCode": "#include <stdio.h>\nint main() {\n  int number = 10;\n  if (number > 5) {\n    printf(\"Číslo je větší než pět\");\n  }\n  return 0;\n}",
+		"errors": [[[5], "Každé uvozovky musí být uzavřené"]]
 	},
 	{
 		"name": "Ahoj, světe!",
-		"wrongCode": "#include <stdio.h>\nint main() {\n  printf(\"Hello, World!\")\n  return 0\n}",
-		"rightCode": "#include <stdio.h>\nint main() {\n  printf(\"Hello, World!\");\n  return 0;\n}",
-		"errors": [[3, "Každý příkaz musí končit středníkem"]]
+		"wrongCode": "#include <stdio.h>\nint main() {\n  printf(\"Ahoj, Purkiádo!\")\n  return 0\n}",
+		"rightCode": "#include <stdio.h>\nint main() {\n  printf(\"Ahoj, Purkiádo!\");\n  return 0;\n}",
+		"errors": [[[3, 4], "Každý příkaz musí končit středníkem"]]
 	}
 ]
