@@ -6,8 +6,10 @@ function Hra() {
     const [level, setLevel] = useState(0)
 
     useEffect(() => {
-        console.log(data)
+        // console.log(data)
         setCodeVal(data[level].wrongCode)
+        console.log((data[level].errors[0][0] as any).includes(3))
+
     }, [])
     function change(e: any) {
         if (e.target.value == data[level].rightCode) {
@@ -34,15 +36,23 @@ function Hra() {
 
             <div className="container">
                 <div className="list">
-                    <ol>
+                    <ol className="lineCount">
                         {/* 9 řádků */}
-                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li className={(data[level].errors[0][0] as any).includes(1) ? "redLineCount" : ""}></li>
+                        <li className={(data[level].errors[0][0] as any).includes(2) ? "redLineCount" : ""}></li>
+                        <li className={(data[level].errors[0][0] as any).includes(3) ? "redLineCount" : ""}></li>
+                        <li className={(data[level].errors[0][0] as any).includes(4) ? "redLineCount" : ""}></li>
+                        <li className={(data[level].errors[0][0] as any).includes(5) ? "redLineCount" : ""}></li>
+                        <li className={(data[level].errors[0][0] as any).includes(6) ? "redLineCount" : ""}></li>
+                        <li className={(data[level].errors[0][0] as any).includes(7) ? "redLineCount" : ""}></li>
+                        <li className={(data[level].errors[0][0] as any).includes(8) ? "redLineCount" : ""}></li>
+                        <li className={(data[level].errors[0][0] as any).includes(9) ? "redLineCount" : ""}></li>
                     </ol>
-                </div>
+                </div >
                 <div className="textarea">
                     <textarea onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={45} rows={9}></textarea>
                 </div>
-            </div>
+            </div >
 
             <div className="errorLog">
                 <h2>Errory:</h2>
@@ -55,7 +65,7 @@ function Hra() {
                 </ul>
             </div>
             <a className='napoveda' href="https://znakynaklavesnici.cz/">Jak psát znaky na klávesnici (pro losery)</a>
-        </ div>
+        </ div >
     )
 }
 
