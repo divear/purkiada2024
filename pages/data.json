@@ -12,9 +12,12 @@
 		"errors": [[[5], "Každé uvozovky musí být uzavřené"]]
 	},
 	{
-		"name": "Ahoj, světe!",
-		"wrongCode": "#include <stdio.h>\nint main() {\n  printf(\"Ahoj, Purkiádo!\")\n  return 0\n}",
-		"rightCode": "#include <stdio.h>\nint main() {\n  printf(\"Ahoj, Purkiádo!\");\n  return 0;\n}",
-		"errors": [[[3, 4], "Každý příkaz musí končit středníkem"]]
+		"name": "",
+		"wrongCode": "#include <stdio.h>\nint main() {\n  int cislo = 14;\n  if (cislo % 3 = 0) {\n    printf(\"Fizz\");\n  } else if (cislo % 6 = 0) {\n    printf(\"Buzz\");\n  return 0;\n}",
+		"rightCode": "#include <stdio.h>\nint main() {\n  int cislo = 14;\n  if (cislo % 3 == 0) {\n    printf(\"Fizz\");\n  } else if (cislo % 6 == 0) {\n    printf(\"Buzz\");\n  return 0;\n}",
+		"errors": [
+			[[4, 6], "V porovnávání se používá dvojté rovnítko (==)"],
+			[[8], "Každé uvozovky musí být uzavřené"]
+		]
 	}
 ]
