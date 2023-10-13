@@ -4,12 +4,26 @@ import data from "./data.json"
 function Hra() {
     const [codeVal, setCodeVal] = useState("")
     const [level, setLevel] = useState(0)
+    const [errors, setErrors] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0])
 
     useEffect(() => {
         // console.log(data)
         setCodeVal(data[level].wrongCode)
         console.log((data[level].errors[0][0] as any).includes(3))
 
+        // set errors
+        for (let i = 1; i < 11; i++) {
+            console.log(level)
+
+            data[level].errors.forEach(e => {
+                if ((e[0] as any).includes(i)) {
+                    errors[i] = 1
+                } else {
+                    errors[i] = 0
+                }
+            });
+            console.log(errors)
+        }
     }, [])
     function change(e: any) {
         if (e.target.value == data[level].rightCode) {
@@ -18,9 +32,34 @@ function Hra() {
                 window.location.href = "/win"
                 return
             }
+            for (let i = 1; i < 11; i++) {
+                data[level + 1].errors.forEach(e => {
+                    if (!(e[0] as any).includes(i)) {
+                        errors[i] = 0
+                        setErrors(errors)
+                    }
+                });
+            }
             setCodeVal(data[level + 1].wrongCode)
-            setLevel(level + 1)
+            console.log(level)
+            const temp = level + 1
+            setLevel(temp)
+            console.log(level + 1)
             console.log(data[level].wrongCode)
+
+            // set errors
+            for (let i = 1; i < 11; i++) {
+                console.log(level)
+
+                data[level + 1].errors.forEach(e => {
+                    if ((e[0] as any).includes(i)) {
+                        errors[i] = 1
+                        setErrors(errors)
+                    }
+                });
+                console.log(errors)
+
+            }
 
         } else {
             setCodeVal(e.target.value)
@@ -38,15 +77,15 @@ function Hra() {
                 <div className="list">
                     <ol className="lineCount">
                         {/* 9 řádků */}
-                        <li className={(data[level].errors[0][0] as any).includes(1) ? "redLineCount" : ""}></li>
-                        <li className={(data[level].errors[0][0] as any).includes(2) ? "redLineCount" : ""}></li>
-                        <li className={(data[level].errors[0][0] as any).includes(3) ? "redLineCount" : ""}></li>
-                        <li className={(data[level].errors[0][0] as any).includes(4) ? "redLineCount" : ""}></li>
-                        <li className={(data[level].errors[0][0] as any).includes(5) ? "redLineCount" : ""}></li>
-                        <li className={(data[level].errors[0][0] as any).includes(6) ? "redLineCount" : ""}></li>
-                        <li className={(data[level].errors[0][0] as any).includes(7) ? "redLineCount" : ""}></li>
-                        <li className={(data[level].errors[0][0] as any).includes(8) ? "redLineCount" : ""}></li>
-                        <li className={(data[level].errors[0][0] as any).includes(9) ? "redLineCount" : ""}></li>
+                        <li className={(errors[1] as any) ? "redLineCount" : ""}></li>
+                        <li className={(errors[2] as any) ? "redLineCount" : ""}></li>
+                        <li className={(errors[3] as any) ? "redLineCount" : ""}></li>
+                        <li className={(errors[4] as any) ? "redLineCount" : ""}></li>
+                        <li className={(errors[5] as any) ? "redLineCount" : ""}></li>
+                        <li className={(errors[6] as any) ? "redLineCount" : ""}></li>
+                        <li className={(errors[7] as any) ? "redLineCount" : ""}></li>
+                        <li className={(errors[8] as any) ? "redLineCount" : ""}></li>
+                        <li className={(errors[9] as any) ? "redLineCount" : ""}></li>
                     </ol>
                 </div >
                 <div className="textarea">

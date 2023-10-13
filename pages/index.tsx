@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
 	function rezerv() {
-
+		window.location.href = "/hra"
 	}
 	return (
 		<div>
@@ -13,7 +13,7 @@ export default function Home() {
 				<form action="/hra/">
 					<input type="text" placeholder="Jméno" />
 					<input type="text" placeholder="Heslo" />
-					<button onClick={() => window.location.href = "/hra"}>start</button>
+					<button onClick={rezerv}>start</button>
 				</form>
 			</div>
 		</div >
