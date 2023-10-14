@@ -5,6 +5,7 @@ function Hra() {
     const [codeVal, setCodeVal] = useState("")
     const [level, setLevel] = useState(0)
     const [errors, setErrors] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0])
+    const [modal, setModal] = useState(false)
 
     useEffect(() => {
         // console.log(data)
@@ -28,42 +29,44 @@ function Hra() {
     function reset() {
         setCodeVal(data[level].wrongCode)
     }
+    function next() {
+        setModal(false)
+        if (!data[level + 1]) {
+            window.location.href = "/win"
+            return
+        }
+        for (let i = 1; i < 11; i++) {
+            data[level + 1].errors.forEach(e => {
+                if (!(e[0] as any).includes(i)) {
+                    errors[i] = 0
+                    setErrors(errors)
+                }
+            });
+        }
+        setCodeVal(data[level + 1].wrongCode)
+        console.log(level)
+        const temp = level + 1
+        setLevel(temp)
+        console.log(level + 1)
+        console.log(data[level].wrongCode)
+
+        // set errors
+        for (let i = 1; i < 11; i++) {
+            console.log(level)
+
+            data[level + 1].errors.forEach(e => {
+                if ((e[0] as any).includes(i)) {
+                    errors[i] = 1
+                    setErrors(errors)
+                }
+            });
+            console.log(errors)
+
+        }
+    }
     function change(e: any) {
         if (e.target.value == data[level].rightCode) {
-            alert("SPRÁVNĚ!!!!")
-            if (!data[level + 1]) {
-                window.location.href = "/win"
-                return
-            }
-            for (let i = 1; i < 11; i++) {
-                data[level + 1].errors.forEach(e => {
-                    if (!(e[0] as any).includes(i)) {
-                        errors[i] = 0
-                        setErrors(errors)
-                    }
-                });
-            }
-            setCodeVal(data[level + 1].wrongCode)
-            console.log(level)
-            const temp = level + 1
-            setLevel(temp)
-            console.log(level + 1)
-            console.log(data[level].wrongCode)
-
-            // set errors
-            for (let i = 1; i < 11; i++) {
-                console.log(level)
-
-                data[level + 1].errors.forEach(e => {
-                    if ((e[0] as any).includes(i)) {
-                        errors[i] = 1
-                        setErrors(errors)
-                    }
-                });
-                console.log(errors)
-
-            }
-
+            setModal(true)
         } else {
             setCodeVal(e.target.value)
         }
@@ -75,6 +78,11 @@ function Hra() {
             <h1>Level {level}</h1>
             <p>Protip: Compiler má vždy pravdu</p>
             <p>Protip2: Neměň formátování</p>
+
+            <div className={modal ? "winModal" : "no"}>
+                <h1>Správně!</h1>
+                <button autoFocus={true} onClick={next}>Další úroveň</button>
+            </div>
 
             <div className="container">
                 <div className="list">

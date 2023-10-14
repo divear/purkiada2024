@@ -12,7 +12,7 @@ export default function Home() {
 				<p>Úloha číslo 4 nebo kolik idk</p>
 				<form action="/hra/">
 					<input type="text" placeholder="Jméno" />
-					<input type="text" placeholder="Heslo" />
+					<input type="password" placeholder="Heslo" />
 					<button onClick={rezerv}>start</button>
 				</form>
 			</div>
