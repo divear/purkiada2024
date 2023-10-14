@@ -96,3 +96,8 @@ textarea {
 .redLineCount {
 	background-color: rgb(221, 0, 0) !important;
 }
+.reset {
+	position: fixed;
+	bottom: 30%;
+	border: 1px solid black;
+}

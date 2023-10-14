@@ -25,6 +25,9 @@ function Hra() {
             console.log(errors)
         }
     }, [])
+    function reset() {
+        setCodeVal(data[level].wrongCode)
+    }
     function change(e: any) {
         if (e.target.value == data[level].rightCode) {
             alert("SPRÁVNĚ!!!!")
@@ -91,6 +94,9 @@ function Hra() {
                 <div className="textarea">
                     <textarea onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={45} rows={9}></textarea>
                 </div>
+                <button onClick={reset} className="reset">
+                    Reset
+                </button>
             </div >
 
             <div className="errorLog">
@@ -103,7 +109,7 @@ function Hra() {
                     })}
                 </ul>
             </div>
-            <a className='napoveda' href="https://znakynaklavesnici.cz/">Jak psát znaky na klávesnici (pro losery)</a>
+            <a className='napoveda' href="https://znakynaklavesnici.cz/">Jak psát znaky na klávesnici (kdo potřebuje)</a>
         </ div >
     )
 }
