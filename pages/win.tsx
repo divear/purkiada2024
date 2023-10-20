@@ -2,7 +2,7 @@ import React from 'react'
 
 function Win() {
     return (
-        <div><h1>Vyhrals kamo</h1></div>
+        <div><h1 className='intro'>Vyhral jsi</h1></div>
     )
 }
 
