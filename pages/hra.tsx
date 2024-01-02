@@ -10,11 +10,11 @@ function Hra() {
     useEffect(() => {
         // console.log(data)
         setCodeVal(data[level].wrongCode)
-        console.log((data[level].errors[0][0] as any).includes(3))
+        // console.log((data[level].errors[0][0] as any).includes(3))
 
         // set errors
-        for (let i = 1; i < 11; i++) {
-            console.log(level)
+        for (let i = 1; i < 9; i++) {
+            // console.log(level)
 
             data[level].errors.forEach(e => {
                 if ((e[0] as any).includes(i)) {
@@ -23,7 +23,7 @@ function Hra() {
                     errors[i] = 0
                 }
             });
-            console.log(errors)
+            // console.log(errors)
         }
     }, [])
     function reset() {
@@ -65,12 +65,14 @@ function Hra() {
         }
     }
     function change(e: any) {
-        if (e.target.value == data[level].rightCode) {
+        if (e.target.value.replace(/\s/g, "") == data[level].rightCode.replace(/\s/g, "")) {
             setModal(true)
         } else {
             setCodeVal(e.target.value)
         }
     }
+
+    console.log(errors)
 
     return (
         <div>
@@ -88,15 +90,11 @@ function Hra() {
                 <div className="list">
                     <ol className="lineCount">
                         {/* 9 řádků */}
-                        <li className={(errors[1] as any) ? "redLineCount" : ""}></li>
-                        <li className={(errors[2] as any) ? "redLineCount" : ""}></li>
-                        <li className={(errors[3] as any) ? "redLineCount" : ""}></li>
-                        <li className={(errors[4] as any) ? "redLineCount" : ""}></li>
-                        <li className={(errors[5] as any) ? "redLineCount" : ""}></li>
-                        <li className={(errors[6] as any) ? "redLineCount" : ""}></li>
-                        <li className={(errors[7] as any) ? "redLineCount" : ""}></li>
-                        <li className={(errors[8] as any) ? "redLineCount" : ""}></li>
-                        <li className={(errors[9] as any) ? "redLineCount" : ""}></li>
+                        {errors.slice(1, 10).map((e, i) => {
+                            return (
+                                <li className={(e as any) ? "redLineCount" : ""}></li>
+                            )
+                        })}
                     </ol>
                 </div >
                 <div className="textarea">
@@ -112,7 +110,7 @@ function Hra() {
                 <ul>
                     {data[level] && data[level].errors.map((e, i) => {
                         return (
-                            <li key={i}>{e[1]} line: {e[0].toString()}</li>
+                            <li key={i}>{e[1]} <span className='errorLineNum'>řádek: {e[0].toString()}</span></li>
                         )
                     })}
                 </ul>

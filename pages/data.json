@@ -1,23 +1,32 @@
 [
 	{
-		"name": "Ahoj, světe!",
+		"name": "C",
 		"wrongCode": "#include <stdio.h>\nint main() {\n  printf(\"Ahoj, Purkiádo!\")\n  return 0\n}",
 		"rightCode": "#include <stdio.h>\nint main() {\n  printf(\"Ahoj, Purkiádo!\");\n  return 0;\n}",
 		"errors": [[[3, 4], "Každý příkaz musí končit středníkem"]]
 	},
 	{
-		"name": "If statement!",
+		"name": "C",
 		"wrongCode": "#include <stdio.h>\nint main() {\n  int number = 10;\n  if (number > 5) {\n    printf(\"Číslo je větší než pět);\n  }\n  return 0;\n}",
 		"rightCode": "#include <stdio.h>\nint main() {\n  int number = 10;\n  if (number > 5) {\n    printf(\"Číslo je větší než pět\");\n  }\n  return 0;\n}",
 		"errors": [[[5], "Každé uvozovky musí být uzavřené"]]
 	},
 	{
-		"name": "",
+		"name": "C",
 		"wrongCode": "#include <stdio.h>\nint main() {\n  int cislo = 14;\n  if (cislo % 3 = 0) {\n    printf(\"Fizz\");\n  } else if (cislo % 6 = 0) {\n    printf(\"Buzz);\n  return 0;\n}",
 		"rightCode": "#include <stdio.h>\nint main() {\n  int cislo = 14;\n  if (cislo % 3 == 0) {\n    printf(\"Fizz\");\n  } else if (cislo % 6 == 0) {\n    printf(\"Buzz\");\n  return 0;\n}",
 		"errors": [
 			[[4, 6], "V porovnávání se používá dvojté rovnítko (==)"],
 			[[7], "Každé uvozovky musí být uzavřené"]
+		]
+	},
+	{
+		"name": "Python",
+		"wrongCode": "arr = [1, 2, \"@lukas.ode\", 4, \"@jiriukropec]\nfiltered_arr = []\nfor x in arr:\n    if isinstance(x, int):\n        filtered_arr.append(x)\nsum_result = sum(filtered_arr)\nprint(f\"Originál: {arr}\")\nprit(f\"Filtrovanej: {filtered_arr}\")\nprint(f\"Součet všech čísel: {sum_result}\")",
+		"rightCode": "arr = [1, 2, \"@lukas.ode\", 4, \"@jiriukropec\"]\nfiltered_arr = []\nfor x in arr:\n    if isinstance(x, int):\n        filtered_arr.append(x)\nsum_result = sum(filtered_arr)\nprint(f\"Originál: {arr}\")\nprint(f\"Filtrovanej: {filtered_arr}\")\nprint(f\"Součet všech čísel: {sum_result}\")",
+		"errors": [
+			[[1], "Každá uvozovka musí být uzavřená"],
+			[[5], "Funkce \"prit\" neexistuje, nemyslíš \"print\"?"]
 		]
 	}
 ]
