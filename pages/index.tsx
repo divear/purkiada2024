@@ -9,7 +9,7 @@ export default function Home() {
 		<div>
 			<div className="intro">
 				<h1>Purkiada bug hunt</h1>
-				<p>Úloha číslo ?</p>
+				<p>Úloha číslo 5</p>
 				<form action="/hra/">
 					<input type="text" placeholder="Jméno" />
 					<input type="password" placeholder="Heslo" />
