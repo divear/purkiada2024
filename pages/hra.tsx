@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import data from "./data.json"
+import { error } from 'console'
 
 function Hra() {
     const [codeVal, setCodeVal] = useState("")
     const [level, setLevel] = useState(0)
     const [errors, setErrors] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0])
     const [modal, setModal] = useState(false)
-    const [errorsList, setErrorsList] = useState<any>()
+    const [errorsList, setErrorsList] = useState<any[]>([])
 
     useEffect(() => {
-        // console.log(data)
+        console.log(data)
         setCodeVal(data[level].wrongCode)
         setErrorsList(data[level].errors)
         // console.log((data[level].errors[0][0] as any).includes(3))
@@ -55,6 +56,7 @@ function Hra() {
         console.log(level)
         const temp = level + 1
         setLevel(temp)
+        setErrorsList(data[temp].errors)
         console.log(level + 1)
         console.log(data[level].wrongCode)
 
@@ -74,6 +76,8 @@ function Hra() {
     }
     function change(e: any) {
         setCodeVal(e.target.value)
+        setErrors(Array(9).fill(0))
+
         if (e.target.value.replace(/\s/g, "") == data[level].rightCode.replace(/\s/g, "")) {
             setModal(true)
         } else {
@@ -103,7 +107,7 @@ function Hra() {
         <div>
             <title>Purkiáda bug hunt</title>
             <h1>Level {level}</h1>
-            <p>Protip: Compiler má vždy pravdu</p>
+            <p>Protip: tyhlencty počítače mají qwertz🤮🤮</p>
             <p>Protip2: Neměň formátování</p>
 
             <div className={modal ? "winModal" : "no"}>
@@ -135,7 +139,7 @@ function Hra() {
                 <ul>
                     {data[level] && errorsList.map((e: any, i: number) => {
                         return (
-                            <li key={i}>{e[1]} <span className='errorLineNum'>řádek: {e[0].toString()}</span></li>
+                            <li className='errorItem' key={i}>{e[1]} <span className='errorLineNum'>řádek: {e[0].toString()}</span></li>
                         )
                     })}
                 </ul>

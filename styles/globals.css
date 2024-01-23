@@ -1,5 +1,5 @@
 :root {
-	--bg: #f5e4c7;
+	--bg: #bab8e1;
 	--sbg: #635f63;
 	--fr: #ffffff;
 }
@@ -119,4 +119,12 @@ textarea {
 }
 .errorLineNum {
 	color: rgb(255, 141, 141);
+}
+@media only screen and (max-width: 1800px) {
+	.errorLog {
+		width: 30%;
+	}
+	.errorItem {
+		margin: 5vh 0;
+	}
 }
