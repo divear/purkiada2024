@@ -128,3 +128,30 @@ textarea {
 		margin: 5vh 0;
 	}
 }
+
+@media only screen and (max-width: 1490px) {
+	.errorLog {
+		width: 20%;
+	}
+	.errorItem {
+		margin: 5vh 0;
+	}
+}
+
+@media only screen and (max-width: 1300px) {
+	.errorLog {
+		width: 30%;
+	}
+	.container {
+		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 1150px) {
+	.errorLog {
+		width: 30%;
+	}
+	.container {
+		font-size: 1rem;
+	}
+}

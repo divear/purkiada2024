@@ -21,10 +21,10 @@ function Meta({ title, keywords, description }) {
 }
 
 Meta.defaultProps = {
-    title: "Purkiáda úloha 4",
+    title: "Purkiáda úloha 5",
     keywords:
         "purkiada",
-    description: "Purkiáda úloha 4",
+    description: "Purkiáda úloha 5",
 };
 
 export default Meta;

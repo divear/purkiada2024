@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import data from "./data.json"
 import { error } from 'console'
+import { app, getFirestore, addDoc, collection } from "../components/firebase";
+
 
 function Hra() {
     const [codeVal, setCodeVal] = useState("")
