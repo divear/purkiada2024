@@ -137,7 +137,7 @@ function Hra() {
                         {/* 9 řádků */}
                         {errors.slice(1, 10).map((e, i) => {
                             return (
-                                <li className={(e as any) ? "redLineCount" : ""}></li>
+                                <li key={i} className={(e as any) ? "redLineCount" : ""}></li>
                             )
                         })}
                     </ol>
