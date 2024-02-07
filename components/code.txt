@@ -1,9 +1,6 @@
-function calculateProduct(numbers {
-    let product = 1;
-    for (let num of numbers {
-        product *= num;
-    }
-    return product;
-}
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
 
-function calculateProduct(numbers {\n    let product = 1;\n    for (let num of numbers {\n        product *= num;\n    }\n    return product;\n}
+ctx.beginPath();
+ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+ctx.stroke(); 

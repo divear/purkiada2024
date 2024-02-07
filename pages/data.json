@@ -49,5 +49,14 @@
 		"wrongCode": "function calculateProduct(numbers {\n    let product = 1;\n    for (let num of numbers {\n        product *= num;\n    }\n    return product;\n}",
 		"rightCode": "function calculateProduct(numbers) {\n    let product = 1;\n    for (let num of numbers) {\n        product *= num;\n    }\n    return product;\n}",
 		"errors": [[[1, 3], "Každá závorka musí být uzavřena"]]
+	},
+	{
+		"name": "Javascript",
+		"wrongCode": "const canvas = document.getElementById(\"myCanvas\");\nconst ctx = canvas.getContext(\"2d\";\n\nctx.beginPath();\nctx.arc(100, 75, 50, 0, 2 * Math.PI);\nct.stroke(); \n",
+		"rightCode": "const canvas = document.getElementById(\"myCanvas\");\nconst ctx = canvas.getContext(\"2d\");\n\nctx.beginPath();\nctx.arc(100, 75, 50, 0, 2 * Math.PI);\nctx.stroke(); \n",
+		"errors": [
+			[[2], "Každá závorka musí být uzavřená"],
+			[[6], "Proměnná ct neexistuje"]
+		]
 	}
 ]
