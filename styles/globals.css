@@ -26,6 +26,7 @@ button {
 	border: none;
 	font-size: 5rem;
 	cursor: pointer;
+	border-radius: 1vw;
 }
 input {
 	font-size: 2rem;
@@ -120,6 +121,23 @@ textarea {
 .errorLineNum {
 	color: rgb(255, 141, 141);
 }
+.winText {
+	color: rgb(255, 255, 178);
+}
+.credits {
+	width: 60%;
+	position: relative;
+	text-align: center;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.winImg {
+	width: 10vw;
+	color: white;
+}
+th {
+	color: rgb(215, 214, 214);
+}
 @media only screen and (max-width: 1800px) {
 	.errorLog {
 		width: 30%;
@@ -153,5 +171,8 @@ textarea {
 	}
 	.container {
 		font-size: 1rem;
+	}
+	.credits {
+		width: 100%;
 	}
 }

@@ -30,12 +30,24 @@
 		]
 	},
 	{
-		"name": "Python",
-		"wrongCode": "arr = [1, 2, \"@lukas.ode\", 4, \"@jiriukropec]\nfiltered_arr = []\nfor x in arr:\n    if isinstance(x, int):\n        filtered_arr.append(x)\nsum_result = sum(filtered_arr)\nprint(f\"Originál: {arr}\")\nprit(f\"Filtrovanej: {filtered_arr}\")\nprint(f\"Součet všech čísel: {sum_result}\")",
-		"rightCode": "arr = [1, 2, \"@lukas.ode\", 4, \"@jiriukropec\"]\nfiltered_arr = []\nfor x in arr:\n    if isinstance(x, int):\n        filtered_arr.append(x)\nsum_result = sum(filtered_arr)\nprint(f\"Originál: {arr}\")\nprint(f\"Filtrovanej: {filtered_arr}\")\nprint(f\"Součet všech čísel: {sum_result}\")",
+		"name": "C",
+		"wrongCode": "#include<stdio.h>\n#include<stdlib.h>\n\nstruct Human{\n  char name[30;\n  char surname[30];\n  int age\n};",
+		"rightCode": "#include<stdio.h>\n#include<stdlib.h>\n\nstruct Human{\n  char name[30];\n  char surname[30];\n  int age;\n};",
 		"errors": [
-			[[1], "Každá uvozovka musí být uzavřená"],
-			[[5], "Funkce \"prit\" neexistuje, nemyslíš \"print\"?"]
+			[[5], "Každá závorka musí být uzavřena"],
+			[[7], "Každý řádek musí končit středníkem"]
 		]
+	},
+	{
+		"name": "HTML",
+		"wrongCode": "<div>\n  <h1>Purkiáda bug hunt</h1>\n  <p>lorem ipsum</p>\n  <p>dolor sit\n  <p>amet</p>\n</div>",
+		"rightCode": "<div>\n  <h1>Purkiáda bug hunt</h1>\n  <p>lorem ipsum</p>\n  <p>dolor sit</p>\n  <p>amet</p>\n</div>",
+		"errors": [[[4], "<p> není ukončený"]]
+	},
+	{
+		"name": "Javascript",
+		"wrongCode": "function calculateProduct(numbers {\n    let product = 1;\n    for (let num of numbers {\n        product *= num;\n    }\n    return product;\n}",
+		"rightCode": "function calculateProduct(numbers) {\n    let product = 1;\n    for (let num of numbers) {\n        product *= num;\n    }\n    return product;\n}",
+		"errors": [[[1, 3], "Každá závorka musí být uzavřena"]]
 	}
 ]

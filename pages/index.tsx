@@ -1,14 +1,25 @@
 import Head from "next/head";
 import Image from "next/image";
-import { app, getFirestore, addDoc, setDoc, collection } from "../components/firebase";
-import { useState } from "react";
+import { app, getFirestore, addDoc, setDoc, collection, doc } from "../components/firebase";
+import { use, useEffect, useState } from "react";
 
+var serverDomain: string;
 const db = getFirestore(app);
 
 export default function Home() {
 	const [username, setUsername] = useState("")
 	const [password, setPassword] = useState("")
 	const [err, setErr] = useState("")
+
+
+	useEffect(() => {
+		if (window.location.hostname != "localhost") {
+			serverDomain = "http://quotepy.pythonanywhere.com";
+		} else {
+			serverDomain = "http://127.0.0.1:5000";
+		}
+		if (!window) return;
+	}, []);
 
 	async function sendCont(e: any) {
 		e.preventDefault();
@@ -18,21 +29,26 @@ export default function Home() {
 
 		try {
 			console.log("startin")
-			console.log(addDoc)
+			localStorage.setItem("username", username)
+			localStorage.setItem("password", password)
+			console.log("posted");
+			console.log(serverDomain)
 
-			const docRef = await addDoc(
-				collection(db, username.replaceAll("/", "")),
-				{
-					username,
-					password,
-				}
-			);
-			console.log(docRef)
-			// setSent(true);
-			// location.href = "/hra"
-		} catch (e) {
+			const response = await fetch(`${serverDomain}/login?username=${username}&password=${password}&points=0`, {
+				method: "GET",
+				headers: { "Content-Type": "application/json" },
+				// body: JSON.stringify([username, password, 0]),
+			});
+			console.log(response)
+
+			location.href = "/hra"
+		} catch (e: any) {
+			if (!username || !password) {
+				setErr("Zadej jméno i heslo!!")
+				return
+			}
 			setErr(
-				"Všechna pole jsou povinná"
+				e.message
 			);
 
 			console.error("Error adding document: ", e);
@@ -42,7 +58,7 @@ export default function Home() {
 	return (
 		<div>
 			<div className="intro">
-				<h1>Purkiada bug hunt</h1>
+				<h1>Purkiáda bug hunt</h1>
 				<p>Úloha číslo 5</p>
 				<form onSubmit={(e) => sendCont(e)} className="signin">
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import data from "./data.json"
-import { error } from 'console'
 import { app, getFirestore, addDoc, collection } from "../components/firebase";
 
+var serverDomain: string;
 
 function Hra() {
     const [codeVal, setCodeVal] = useState("")
@@ -10,11 +10,15 @@ function Hra() {
     const [errors, setErrors] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0])
     const [modal, setModal] = useState(false)
     const [errorsList, setErrorsList] = useState<any[]>([])
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
 
     useEffect(() => {
         console.log(data)
         setCodeVal(data[level].wrongCode)
         setErrorsList(data[level].errors)
+        setUsername(localStorage.getItem("username") || "notfound")
+        setPassword(localStorage.getItem("password") || "notfound")
         // console.log((data[level].errors[0][0] as any).includes(3))
 
         // set errors
@@ -27,6 +31,12 @@ function Hra() {
                 }
             });
         }
+        if (window.location.hostname != "localhost") {
+            serverDomain = "http://quotepy.pythonanywhere.com";
+        } else {
+            serverDomain = "http://127.0.0.1:5000";
+        }
+        if (!window) return;
     }, [])
     function reset() {
         setCodeVal(data[level].wrongCode)
@@ -40,7 +50,7 @@ function Hra() {
             });
         }
     }
-    function next() {
+    async function next() {
         setModal(false)
         if (!data[level + 1]) {
             window.location.href = "/win"
@@ -73,8 +83,13 @@ function Hra() {
                 }
             });
             console.log(errors)
-
         }
+
+        const response = await fetch(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+            // body: JSON.stringify([username, password, 0]),
+        });
     }
     function change(e: any) {
         setCodeVal(e.target.value)
@@ -110,7 +125,6 @@ function Hra() {
             <title>Purkiáda bug hunt</title>
             <h1>Level {level}</h1>
             <p>Protip: tyhlencty počítače mají qwertz🤮🤮</p>
-            <p>Protip2: Neměň formátování</p>
 
             <div className={modal ? "winModal" : "no"}>
                 <h1>Správně!</h1>
