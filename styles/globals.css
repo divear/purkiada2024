@@ -23,10 +23,11 @@ body {
 }
 button {
 	background-color: paleturquoise;
-	border: none;
+	/* border: none; */
 	font-size: 5rem;
 	cursor: pointer;
-	border-radius: 1vw;
+	border-radius: 0.6vw;
+	border: 2px solid black;
 }
 input {
 	font-size: 2rem;
@@ -103,7 +104,6 @@ textarea {
 .reset {
 	position: fixed;
 	bottom: 30%;
-	border: 1px solid black;
 }
 .winModal {
 	background-color: var(--sbg);
@@ -151,9 +151,6 @@ th {
 	.errorLog {
 		width: 20%;
 	}
-	.errorItem {
-		margin: 5vh 0;
-	}
 }
 
 @media only screen and (max-width: 1300px) {
@@ -174,5 +171,73 @@ th {
 	}
 	.credits {
 		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 780px) {
+	.intro {
+		width: 90%;
+	}
+	input {
+		width: 95%;
+	}
+	.errorLog {
+		position: fixed;
+		left: 1%;
+		top: 45%;
+		background-color: var(--sbg);
+		color: var(--fr);
+		padding: 1.5vw;
+		border-radius: 0.4vw;
+		font-size: 1rem;
+		width: 95%;
+	}
+	.errorItem {
+		margin: 2vh 0;
+		font-size: 1.5rem;
+		width: 100%;
+	}
+	.napoveda {
+		display: none;
+	}
+	.reset {
+		font-size: 2rem;
+		/* right: 2%; */
+		bottom: 20%;
+	}
+	.textarea {
+		/* font-size: 2rem; */
+		background-color: black;
+		color: white;
+	}
+	.container {
+		position: relative;
+		margin: 0px;
+	}
+	.container .textarea {
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 0;
+	}
+	.container .textarea textarea {
+		margin: 0;
+		padding: 0 0 0 30px;
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		border: 1px solid black;
+		resize: horizontal;
+	}
+	.container .list {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+		width: 10px;
+		background-color: rgb(149, 149, 149);
+	}
+	.container .list ol li {
+		padding-left: 0px;
 	}
 }

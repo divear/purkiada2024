@@ -3,6 +3,36 @@ import data from "./data.json"
 import { app, getFirestore, addDoc, collection } from "../components/firebase";
 
 var serverDomain: string;
+function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+        width: 0,
+        height: 0,
+    });
+
+    useEffect(() => {
+        // only execute all the code below in client side
+        // Handler to call on window resize
+        function handleResize() {
+            // Set window width/height to state
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        }
+
+        // Add event listener
+        window.addEventListener("resize", handleResize);
+
+        // Call handler right away so state gets updated with initial window size
+        handleResize();
+
+        // Remove event listener on cleanup
+        return () => window.removeEventListener("resize", handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+    return windowSize;
+}
 
 function Hra() {
     const [codeVal, setCodeVal] = useState("")
@@ -12,7 +42,9 @@ function Hra() {
     const [errorsList, setErrorsList] = useState<any[]>([])
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [isQwerty, setIsQwerty] = useState(false)
 
+    const size = useWindowSize();
     useEffect(() => {
         console.log(data)
         setCodeVal(data[level].wrongCode)
@@ -94,6 +126,9 @@ function Hra() {
     function change(e: any) {
         setCodeVal(e.target.value)
         setErrors(Array(9).fill(0))
+        if (e.target.value.includes("ů")) {
+            setIsQwerty(true)
+        }
 
         if (e.target.value.replace(/\s/g, "") == data[level].rightCode.replace(/\s/g, "")) {
             setModal(true)
@@ -124,7 +159,7 @@ function Hra() {
         <div>
             <title>Purkiáda bug hunt</title>
             <h1>Level {level}</h1>
-            <p>Protip: tyhlencty počítače mají qwertz🤮🤮</p>
+            <p className={isQwerty ? "" : "no"}>Protip: tyhlencty počítače mají qwertz🤮</p>
 
             <div className={modal ? "winModal" : "no"}>
                 <h1>Správně!</h1>
@@ -143,7 +178,7 @@ function Hra() {
                     </ol>
                 </div >
                 <div className="textarea">
-                    <textarea onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={45} rows={9}></textarea>
+                    <textarea onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={size && size.width > 780 ? 45 : 40} rows={9}></textarea>
                 </div>
                 <button onClick={reset} className="reset">
                     Reset
