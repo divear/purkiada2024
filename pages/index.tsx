@@ -14,7 +14,7 @@ export default function Home() {
 
 	useEffect(() => {
 		if (window.location.hostname != "localhost") {
-			serverDomain = "http://quotepy.pythonanywhere.com";
+			serverDomain = "https://quotepy.pythonanywhere.com";
 		} else {
 			serverDomain = "http://127.0.0.1:5000";
 		}

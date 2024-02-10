@@ -5,18 +5,21 @@
 		"rightCode": "#include <stdio.h>\nint main() {\n  printf(\"Ahoj, Purkiádo!\");\n  return 0;\n}",
 		"errors": [[[3, 4], "Každý řádek musí končit středníkem"]]
 	},
+
 	{
 		"name": "C",
 		"wrongCode": "#include <stdio.h>\nint main() {\n  int number = 10;\n  if (number > 5) {\n    printf(\"Číslo je větší než pět);\n  }\n  return 0;\n}",
 		"rightCode": "#include <stdio.h>\nint main() {\n  int number = 10;\n  if (number > 5) {\n    printf(\"Číslo je větší než pět\");\n  }\n  return 0;\n}",
 		"errors": [[[5], "Každé uvozovky musí být uzavřené"]]
 	},
+
 	{
 		"name": "Rust",
 		"wrongCode": "fn main() {\n    for num in 1..=100 {\n        if num % 3 == 0 && num % 5 == 0 {\n            println!(\"FizzBuzz\");\n        } else if num % 3 == 0 {\n            println!(\"Fizz\");\n        }\n    }\n",
 		"rightCode": "fn main() {\n    for num in 1..=100 {\n        if num % 3 == 0 && num % 5 == 0 {\n            println!(\"FizzBuzz\");\n        } else if num % 3 == 0 {\n            println!(\"Fizz\");\n        }\n    }\n}",
 		"errors": [[[9], "Neuzavřená kulatá závorka hlavní funkce"]]
 	},
+
 	{
 		"name": "C",
 		"wrongCode": "#include <stdio.h>\nint main() {\n  int cislo = 14;\n  if (cislo % 3 = 0) {\n    printf(\"Fizz\");\n  } else if (cislo % 6 = 0) {\n    printf(\"Buzz);\n  return 0;\n}",
@@ -26,6 +29,7 @@
 			[[7], "Každé uvozovky musí být uzavřené"]
 		]
 	},
+
 	{
 		"name": "Python",
 		"wrongCode": "arr = [1, 2, \"@lukas.ode\", 4, \"@jiriukropec]\nfiltered_arr = []\nfor x in arr:\n    if isinstance(x, int):\n        filtered_arr.append(x)\nsum_result = sum(filtered_arr)\nprint(f\"Originál: {arr}\")\nprit(f\"Filtrovanej: {filtered_arr}\")\nprint(f\"Součet všech čísel: {sum_result}\")",
@@ -35,6 +39,7 @@
 			[[5], "Funkce \"prit\" neexistuje, nemyslíš \"print\"?"]
 		]
 	},
+
 	{
 		"name": "C",
 		"wrongCode": "#include<stdio.h>\n#include<stdlib.h>\n\nstruct Human{\n  char name[30;\n  char surname[30];\n  int age\n};",
@@ -44,18 +49,21 @@
 			[[7], "Každý řádek musí končit středníkem"]
 		]
 	},
+
 	{
 		"name": "HTML",
 		"wrongCode": "<div>\n  <h1>Purkiáda bug hunt</h1>\n  <p>lorem ipsum</p>\n  <p>dolor sit\n  <p>amet</p>\n</div>",
 		"rightCode": "<div>\n  <h1>Purkiáda bug hunt</h1>\n  <p>lorem ipsum</p>\n  <p>dolor sit</p>\n  <p>amet</p>\n</div>",
 		"errors": [[[4], "<p> není ukončený"]]
 	},
+
 	{
 		"name": "Javascript",
 		"wrongCode": "function calculateProduct(numbers {\n    let product = 1;\n    for (let num of numbers {\n        product *= num;\n    }\n    return product;\n}",
 		"rightCode": "function calculateProduct(numbers) {\n    let product = 1;\n    for (let num of numbers) {\n        product *= num;\n    }\n    return product;\n}",
 		"errors": [[[1, 3], "Každá závorka musí být uzavřena"]]
 	},
+
 	{
 		"name": "Javascript",
 		"wrongCode": "var tm = document.getElementById(\"myCanvas\");\nconst ctx = tm.getContext(\"2d\";\n\nctx.beginPath();\nctx.arc(100, 75, 50, 0, 2 * Math.PI);\nct.stroke(); \n",
