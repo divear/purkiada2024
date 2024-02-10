@@ -158,7 +158,7 @@ function Hra() {
     return (
         <div>
             <title>Purkiáda bug hunt</title>
-            <h1>Level {level}</h1>
+            <h1 className='levelNum'>Level {level}</h1>
             <p className={isQwerty ? "" : "no"}>Protip: tyhlencty počítače mají qwertz🤮</p>
 
             <div className={modal ? "winModal" : "no"}>
@@ -186,7 +186,7 @@ function Hra() {
             </div >
 
             <div className="errorLog">
-                <h2>Errory:</h2>
+                <h2 className='errorsHeader'>Errory:</h2>
                 <ul>
                     {data[level] && errorsList.map((e: any, i: number) => {
                         return (

@@ -45,7 +45,7 @@ textarea {
 .errorLog {
 	position: fixed;
 	right: 5%;
-	top: 1%;
+	top: 10%;
 	background-color: var(--sbg);
 	color: var(--fr);
 	padding: 1vw;
@@ -190,10 +190,17 @@ th {
 	input {
 		width: 95%;
 	}
+	.levelNum {
+		margin: 0;
+	}
+	.errorsHeader {
+		margin: 0;
+	}
 	.errorLog {
 		position: fixed;
 		left: 1%;
-		top: 45%;
+		top: auto;
+		bottom: 15%;
 		background-color: var(--sbg);
 		color: var(--fr);
 		padding: 1.5vw;
@@ -212,7 +219,7 @@ th {
 	.reset {
 		font-size: 2rem;
 		/* right: 2%; */
-		bottom: 20%;
+		bottom: 2%;
 	}
 	.textarea {
 		/* font-size: 2rem; */
@@ -250,11 +257,6 @@ th {
 		padding-left: 0px;
 	}
 	.credits {
-		/* width: 100%;
-		position: relative;
-		text-align: center;
-		left: 50%;
-		transform: translateX(-50%); */
 		font-size: 1.4rem;
 	}
 }
