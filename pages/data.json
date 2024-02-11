@@ -72,5 +72,15 @@
 			[[2], "Každá závorka musí být uzavřená"],
 			[[6], "Proměnná ct neexistuje"]
 		]
+	},
+
+	{
+		"name": "",
+		"wrongCode": "<ul>\n    <li>Možnost A\n    <li>Možnost B\n        <ul>\n            <li>Podmožnost 1</li>\n            <li>Podmožnost 2</li>\n        \n    </li>\n</ul>",
+		"rightCode": "<ul>\n    <li>Možnost A</li>\n    <li>Možnost B\n        <ul>\n            <li>Podmožnost 1</li>\n            <li>Podmožnost 2</li>\n        </ul>\n    </li>\n</ul>",
+		"errors": [
+			[[7], "<ul> není uzavřené"],
+			[[2], "<li> není uzavřené"]
+		]
 	}
 ]

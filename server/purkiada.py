@@ -10,7 +10,7 @@ def page():
     username = request.args.get('username', type=str)
     password = request.args.get('password', type=str)
     points = request.args.get('points', type=int)
-    file = open('./results.json', 'a')
+    file = open('./results.txt', 'a')
     etime = print(datetime.datetime.now().time())
     with file:
         file.write(f'{username},{password},{points},{etime}\n')

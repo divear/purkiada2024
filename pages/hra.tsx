@@ -124,6 +124,10 @@ function Hra() {
         });
     }
     function change(e: any) {
+        if (e.target.value.split("\n").length > 9) {
+            console.log("too many lines: " + e.target.value.split("\n").length)
+            return
+        }
         setCodeVal(e.target.value)
         setErrors(Array(9).fill(0))
         if (e.target.value.includes("ů")) {
@@ -134,7 +138,7 @@ function Hra() {
             setModal(true)
         } else {
             e.target.value.split("\n").map((n: string, i: number) => {
-                if (n == data[level].rightCode.split("\n")[i]) {
+                if (n == data[level].rightCode.split("\n")[i] || !data[level].rightCode.split("\n")[i]) {
                     console.log(n, data[level].rightCode.split("\n")[i])
                     console.log("line", i, "is correct")
                     errors[i + 1] = 0
