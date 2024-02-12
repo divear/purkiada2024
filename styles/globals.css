@@ -92,7 +92,7 @@ textarea {
 	font-size: inherit;
 	line-height: inherit;
 	border: 1px solid black;
-	resize: horizontal;
+	resize: none;
 }
 .napoveda {
 	position: fixed;

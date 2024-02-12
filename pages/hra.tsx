@@ -185,7 +185,7 @@ function Hra() {
                     <textarea onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={size && size.width > 780 ? 45 : 40} rows={9}></textarea>
                 </div>
                 <button onClick={reset} className="reset">
-                    Reset
+                    Vrátit změny
                 </button>
             </div >
 

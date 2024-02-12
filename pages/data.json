@@ -17,7 +17,7 @@
 		"name": "Rust",
 		"wrongCode": "fn main() {\n    for num in 1..=100 {\n        if num % 3 == 0 && num % 5 == 0 {\n            println!(\"FizzBuzz\");\n        } else if num % 3 == 0 {\n            println!(\"Fizz\");\n        }\n    }\n",
 		"rightCode": "fn main() {\n    for num in 1..=100 {\n        if num % 3 == 0 && num % 5 == 0 {\n            println!(\"FizzBuzz\");\n        } else if num % 3 == 0 {\n            println!(\"Fizz\");\n        }\n    }\n}",
-		"errors": [[[9], "Neuzavřená kulatá závorka hlavní funkce"]]
+		"errors": [[[9], "Neuzavřená složená závorka hlavní funkce"]]
 	},
 
 	{
