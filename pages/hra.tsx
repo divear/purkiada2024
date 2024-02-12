@@ -181,6 +181,7 @@ function Hra() {
                         })}
                     </ol>
                 </div >
+
                 <div className="textarea">
                     <textarea onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={size && size.width > 780 ? 45 : 40} rows={9}></textarea>
                 </div>
@@ -199,7 +200,7 @@ function Hra() {
                     })}
                 </ul>
             </div>
-            <a className='napoveda' href="https://znakynaklavesnici.cz/">Jak psát znaky na klávesnici (kdo potřebuje)</a>
+            <a target='_blank' className='napoveda' href="https://znakynaklavesnici.cz/">Jak psát znaky na klávesnici (kdo potřebuje)</a>
         </ div >
     )
 }

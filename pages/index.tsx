@@ -58,13 +58,23 @@ export default function Home() {
 	return (
 		<div>
 			<div className="intro">
-				<h1>Purkiáda bug hunt</h1>
+
+
+				<div className="container">
+					<div className="row">
+						<div className="col-md-12 text-center">
+							<h4 className="animate-character">Purkiáda bug hunt</h4>
+						</div>
+					</div>
+				</div>
+
+
 				<p>Úloha číslo 5</p>
 				<form onSubmit={(e) => sendCont(e)} className="signin">
 
 					<input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Jméno" />
 					<input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Heslo" />
-					<button type="submit">start</button>
+					<button type="submit">Start</button>
 				</form>
 				<h1>{err}</h1>
 			</div>
