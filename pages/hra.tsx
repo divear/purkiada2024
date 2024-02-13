@@ -64,7 +64,7 @@ function Hra() {
             });
         }
         if (window.location.hostname != "localhost") {
-            serverDomain = "http://quotepy.pythonanywhere.com";
+            serverDomain = "https://quotepy.pythonanywhere.com";
         } else {
             serverDomain = "http://127.0.0.1:5000";
         }
@@ -122,6 +122,8 @@ function Hra() {
             headers: { "Content-Type": "application/json" },
             // body: JSON.stringify([username, password, 0]),
         });
+        console.log(response)
+        console.log(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`)
     }
     function change(e: any) {
         if (e.target.value.split("\n").length > 9) {
