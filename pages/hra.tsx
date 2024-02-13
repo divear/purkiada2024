@@ -125,9 +125,12 @@ function Hra() {
         console.log(response)
         console.log(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`)
     }
+
     function change(e: any) {
         if (e.target.value.split("\n").length > 9) {
             console.log("too many lines: " + e.target.value.split("\n").length)
+            return
+        } else if (modal) {
             return
         }
         setCodeVal(e.target.value)

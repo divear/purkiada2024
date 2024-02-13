@@ -63,7 +63,7 @@ export default function Home() {
 				<div className="container">
 					<div className="row">
 						<div className="col-md-12 text-center">
-							<h4 className="animate-character">Purkiáda bug hunt</h4>
+							<h4 className="animate-character">Purkiáda bug hunt</h4>
 						</div>
 					</div>
 				</div>

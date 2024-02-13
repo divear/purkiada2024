@@ -1,15 +1,17 @@
+import Image from 'next/image'
 import React from 'react'
+import trophy from "../components/imgs/trophy.gif"
 
 function Win() {
     return (
         <div className='intro'>
-            <img className='winImg' src='http://cdn.onlinewebfonts.com/svg/img_452064.png' alt='winimg'></img>
+            <Image className='winImg' src={trophy} alt="trofie" />
             <h1 className='winText' >Vyhrál jsi</h1>
             <p>Máš maximální počet bodů z této úlohy, hodně štěstí s ostatními.</p>
             <h5>Tvůrci:</h5>
             <div className="credits">
 
-                <table >
+                <table>
                     <thead>
                         <tr>
                             <th>Pozice</th>

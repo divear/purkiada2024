@@ -124,6 +124,7 @@ textarea {
 }
 .winText {
 	color: #ffffb2;
+	margin: 0;
 }
 .credits {
 	display: grid;
@@ -136,14 +137,20 @@ textarea {
 }
 td {
 	border: 1px solid rgba(255, 255, 255, 0.207);
-	/* display: grid; */
-	/* margin: 0vw; */
 	padding: 0.2vh 1vw;
 	border-radius: 0.3vw;
 }
+td:hover {
+	border: 1px solid rgba(255, 255, 255, 0.207);
+	padding: 0.2vh 1vw;
+	color: #bab8e1;
+}
 .winImg {
-	width: 10vw;
+	width: 15vw;
+	height: auto;
 	color: white;
+	margin: 0;
+	padding: 0;
 }
 th {
 	color: rgb(215, 214, 214);
@@ -154,7 +161,7 @@ th {
 		-225deg,
 		#e4e3ff 0%,
 		#6f69ec 33%,
-		#ffffb2 66%,
+		#f8f8e2 66%,
 		#a4a1e6 100%
 	);
 	background-size: auto auto;
@@ -198,6 +205,7 @@ th {
 	}
 	.container {
 		font-size: 1.5rem;
+		height: 20%;
 	}
 }
 
@@ -259,6 +267,7 @@ th {
 	.container {
 		position: relative;
 		margin: 0px;
+		overflow-x: scroll;
 	}
 	.container .textarea {
 		position: absolute;
