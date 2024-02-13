@@ -123,7 +123,7 @@ textarea {
 	color: rgb(255, 141, 141);
 }
 .winText {
-	color: rgb(255, 255, 178);
+	color: #ffffb2;
 }
 .credits {
 	display: grid;
@@ -150,12 +150,11 @@ th {
 }
 
 .animate-character {
-	text-transform: uppercase;
 	background-image: linear-gradient(
 		-225deg,
 		#e4e3ff 0%,
-		#918de8 29%,
-		#7873d6 67%,
+		#6f69ec 33%,
+		#ffffb2 66%,
 		#a4a1e6 100%
 	);
 	background-size: auto auto;
@@ -165,9 +164,9 @@ th {
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	animation: textclip 2s linear infinite;
+	animation: textclip 2.5s linear infinite;
 	display: inline-block;
-	font-size: 3rem;
+	font-size: 4rem;
 	padding: 1vw;
 	margin: 0;
 }
@@ -177,6 +176,7 @@ th {
 		background-position: 200% center;
 	}
 }
+
 @media only screen and (max-width: 1800px) {
 	.errorLog {
 		width: 30%;
