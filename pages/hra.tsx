@@ -205,6 +205,11 @@ function Hra() {
                     })}
                 </ul>
             </div>
+            <p>V případě problemů a pokud nás nemůžeš najít nám napiš na ig: </p>
+            <ul>
+                <li>@lukas.ode</li>
+                <li>@jiriukropec</li>
+            </ul>
             <a target='_blank' className='napoveda' href="https://znakynaklavesnici.cz/">Jak psát znaky na klávesnici (kdo potřebuje)</a>
         </ div >
     )
