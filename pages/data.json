@@ -32,8 +32,8 @@
 
 	{
 		"name": "Python",
-		"wrongCode": "arr = [1, 2, \"@lukas.ode\", 4, \"@jiriukropec]\nfiltered_arr = []\nfor x in arr:\n    if isinstance(x, int):\n        filtered_arr.append(x)\nsum_result = sum(filtered_arr)\nprint(f\"Originál: {arr}\")\nprit(f\"Filtrovanej: {filtered_arr}\")\nprint(f\"Součet všech čísel: {sum_result}\")",
-		"rightCode": "arr = [1, 2, \"@lukas.ode\", 4, \"@jiriukropec\"]\nfiltered_arr = []\nfor x in arr:\n    if isinstance(x, int):\n        filtered_arr.append(x)\nsum_result = sum(filtered_arr)\nprint(f\"Originál: {arr}\")\nprint(f\"Filtrovanej: {filtered_arr}\")\nprint(f\"Součet všech čísel: {sum_result}\")",
+		"wrongCode": "arr = [1, 2, \"tri\", 4, \"pet]\nfiltered_arr = []\nfor x in arr:\n    if isinstance(x, int):\n        filtered_arr.append(x)\nsum_result = sum(filtered_arr)\nprint(f\"Originál: {arr}\")\nprit(f\"Filtrovanej: {filtered_arr}\")\nprint(f\"Součet všech čísel: {sum_result}\")",
+		"rightCode": "arr = [1, 2, \"tri\", 4, \"pet\"]\nfiltered_arr = []\nfor x in arr:\n    if isinstance(x, int):\n        filtered_arr.append(x)\nsum_result = sum(filtered_arr)\nprint(f\"Originál: {arr}\")\nprint(f\"Filtrovanej: {filtered_arr}\")\nprint(f\"Součet všech čísel: {sum_result}\")",
 		"errors": [
 			[[1], "Každá uvozovka musí být uzavřená"],
 			[[5], "Funkce \"prit\" neexistuje, nemyslíš \"print\"?"]
