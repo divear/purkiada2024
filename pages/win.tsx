@@ -6,6 +6,8 @@ function Win() {
     return (
         <div className='intro'>
             <Image className='winImg' src={trophy} alt="trofie" />
+            <img className='winImg' src="https://raw.githubusercontent.com/divear/purkiada2024/master/components/imgs/trophy.gif?token=GHSAT0AAAAAACOGHZV24HE2JMXHRQYL62ZYZOMUJ4Q" alt="trofie" ></img>
+     
             <h1 className='winText' >Vyhrál jsi</h1>
             <p>Máš maximální počet bodů z této úlohy, hodně štěstí s ostatními.</p>
             <h5>Tvůrci:</h5>
