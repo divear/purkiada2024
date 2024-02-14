@@ -206,7 +206,7 @@ function Hra() {
                 </ul>
             </div>
             <div className="igText">
-                <p>V případě problemů a pokud nás nemůžeš najít nám napiš na ig: </p>
+                <p>V případě problemů nám můžeš napsat i na ig: </p>
                 <ul>
                     <li>@lukas.ode</li>
                     <li>@jiriukropec</li>
