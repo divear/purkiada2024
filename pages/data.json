@@ -63,7 +63,18 @@
 		"rightCode": "function calculateProduct(numbers) {\n    let product = 1;\n    for (let num of numbers) {\n        product *= num;\n    }\n    return product;\n}",
 		"errors": [[[1, 3], "Každá závorka musí být uzavřena"]]
 	},
-
+  {
+    "name": "Ruby",
+    "wrongCode": "def greet(name)\n  puts \"Hello \" + name\nend\ngreet\"World\"",
+    "rightCode": "def greet(name)\n  puts \"Hello \" + name\nend\ngreet(\"World\")",
+    "errors": [[[4], "Volání funkce \"greet\" musí používat závorky"]]
+  },
+  {
+    "name": "Python",
+    "wrongCode": "def factorial(n):\nif n == 0:\nreturn 1\nelse:\nreturn n * factorial(n - 1)\nprint(factorial(5))",
+    "rightCode": "def factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\nprint(factorial(5))",
+    "errors": [[[2], "V Pythonu je nutné dodržet odsazení"]]
+  }
 	{
 		"name": "Javascript",
 		"wrongCode": "var tm = document.getElementById(\"myCanvas\");\nconst ctx = tm.getContext(\"2d\";\n\nctx.beginPath();\nctx.arc(100, 75, 50, 0, 2 * Math.PI);\nct.stroke(); \n",
