@@ -1,5 +1,5 @@
 :root {
-	--bg: #bab8e1;
+	--bg: #aab8e1;
 	--sbg: #635f63;
 	--fr: #ffffff;
 }
@@ -165,9 +165,9 @@ th {
 	background-image: linear-gradient(
 		-225deg,
 		#e4e3ff 0%,
-		#6f69ec 33%,
-		#f8f8e2 66%,
-		#a4a1e6 100%
+		#ff69ec 33%,
+		#fff8e2 66%,
+		#f4a1e6 100%
 	);
 	background-size: auto auto;
 	background-clip: border-box;
@@ -189,7 +189,7 @@ th {
 	}
 }
 
-@media only screen and (max-width: 1800px) {
+@media only screen and (max-width: 2800px) {
 	.errorLog {
 		width: 30%;
 	}

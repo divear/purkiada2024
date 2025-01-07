@@ -117,12 +117,12 @@ function Hra() {
             console.log(errors)
         }
 
-        const response = await fetch(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`, {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-            // body: JSON.stringify([username, password, 0]),
-        });
-        console.log(response)
+        // const response = await fetch(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`, {
+        //     method: "GET",
+        //     headers: { "Content-Type": "application/json" },
+        //     // body: JSON.stringify([username, password, 0]),
+        // });
+        // console.log(response)
         console.log(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`)
     }
 

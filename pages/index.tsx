@@ -27,6 +27,9 @@ export default function Home() {
 		console.log(username)
 		console.log(password)
 
+      //remove after showoff
+			location.href = "/hra"
+
 		try {
 			console.log("startin")
 			localStorage.setItem("username", username)
