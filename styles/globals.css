@@ -1,5 +1,5 @@
 :root {
-	--bg: #aab8e1;
+	--bg: #8db7e8;
 	--sbg: #635f63;
 	--fr: #ffffff;
 }
@@ -22,12 +22,12 @@ body {
 	text-align: center;
 }
 button {
-	background-color: #918de7;
+	background-color: #bd8de8;
 	/* border: none; */
 	font-size: 5rem;
 	cursor: pointer;
 	border-radius: 0.6vw;
-	border: 2px solid black;
+	border: 0px solid black;
 }
 input {
 	width: 90%;
@@ -104,7 +104,15 @@ textarea {
 }
 .reset {
 	position: fixed;
-	bottom: 30%;
+	top: 7%;
+  right: 45%;
+  border: none;
+  z-index: 9;
+  padding: 0.5vw;
+}
+.reset:hover {
+  background-color: #9f8fe7;
+  padding: 0.6vw;
 }
 .winModal {
 	background-color: var(--sbg);

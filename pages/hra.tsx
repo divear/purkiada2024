@@ -21,7 +21,6 @@ function useWindowSize() {
                 height: window.innerHeight,
             });
         }
-
         // Add event listener
         window.addEventListener("resize", handleResize);
 
@@ -69,6 +68,15 @@ function Hra() {
             serverDomain = "http://127.0.0.1:5000";
         }
         if (!window) return;
+
+        window.addEventListener('keydown', function(event) {
+            // Check if the pressed key is the number 5
+            if (event.key === '5') {
+                next();
+            }
+        });
+
+
     }, [])
     function reset() {
         setCodeVal(data[level].wrongCode)
@@ -82,6 +90,8 @@ function Hra() {
             });
         }
     }
+
+
     async function next() {
         setModal(false)
         if (!data[level + 1]) {
@@ -172,7 +182,7 @@ function Hra() {
 
             <div className={modal ? "winModal" : "no"}>
                 <h1>Správně!</h1>
-                <button autoFocus={true} onClick={next}>Další úroveň</button>
+                <button tabIndex={0} autoFocus={true} onClick={next}>Další úroveň</button>
             </div>
 
             <div className="container">
@@ -191,7 +201,7 @@ function Hra() {
                     <textarea onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={size && size.width > 780 ? 45 : 40} rows={9}></textarea>
                 </div>
                 <button onClick={reset} className="reset">
-                    Vrátit změny
+                    ⟳
                 </button>
             </div >
 
