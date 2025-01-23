@@ -1,6 +1,9 @@
+"use client";
 import React, { useEffect, useState } from 'react'
 import data from "./data.json"
 import { app, getFirestore, addDoc, collection } from "../components/firebase";
+import hljs from "highlight.js";
+import "highlight.js/styles/default.css";
 
 var serverDomain: string;
 function useWindowSize() {
@@ -174,8 +177,20 @@ function Hra() {
         }
     }
 
+
+
+  useEffect(() => {
+    hljs.highlightAll();
+   const code = "console.log('Highlighted Code')"
+   const highlightedCode = hljs.highlight(code , { language: 'javascript' }).value
+    setCodeVal(highlightedCode)
+  }, []);
     return (
         <div>
+
+             <div
+              />
+
             <title>Purkiáda bug hunt</title>
             <h1 className='levelNum'>Level {level}</h1>
             <p className={isQwerty ? "" : "no"}>Protip: tyhlencty počítače mají qwertz🤮</p>
@@ -198,7 +213,9 @@ function Hra() {
                 </div >
 
                 <div className="textarea">
-                    <textarea onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={size && size.width > 780 ? 45 : 40} rows={9}></textarea>
+                    <textarea
+
+            onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={size && size.width > 780 ? 45 : 40} rows={9}></textarea>
                 </div>
                 <button onClick={reset} className="reset">
                     ⟳

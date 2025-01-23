@@ -11,3 +11,8 @@ aaaaaaaaaaaaaaaaaaaaaaaaa,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,0,None
 aaaaaaaaaaaaaaaaaaaaaaaaa,aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,1,None
 a,a,0,None
 a,a,1,None
+,,0,None
+None,None,None,None
+tohlefunguje,heloo,0,None
+,,0,None
+,,0,None

@@ -6,6 +6,7 @@
 		"errors": [[[3, 4], "Každý řádek musí končit středníkem"]]
 	},
 
+
 	{
 		"name": "C",
 		"wrongCode": "#include <stdio.h>\nint main() {\n  int number = 10;\n  if (number > 5) {\n    printf(\"Číslo je větší než pět);\n  }\n  return 0;\n}",
@@ -67,12 +68,6 @@
     "wrongCode": "def greet(name)\n  puts \"Hello \" + name\nend\ngreet\"World\"",
     "rightCode": "def greet(name)\n  puts \"Hello \" + name\nend\ngreet(\"World\")",
     "errors": [[[4], "Volání funkce \"greet\" musí používat závorky"]]
-  },
-  {
-    "name": "Python",
-    "wrongCode": "def factorial(n):\nif n == 0:\nreturn 1\nelse:\nreturn n * factorial(n - 1)\nprint(factorial(5))",
-    "rightCode": "def factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\nprint(factorial(5))",
-    "errors": [[[2], "V Pythonu je nutné dodržet odsazení"]]
   },
 	{
 		"name": "Javascript",
