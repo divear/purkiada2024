@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useState } from 'react'
 import data from "./data.json"
-import { app, getFirestore, addDoc, collection } from "../components/firebase";
-import hljs from "highlight.js";
+// import { app, getFirestore, addDoc, collection } from "../components/firebase";
+// import hljs from "highlight.js";
 import "highlight.js/styles/default.css";
 import TextareaAutosize from 'react-textarea-autosize';
 import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import { relative } from 'path';
+// import { relative } from 'path';
 
 var serverDomain: string;
 function useWindowSize() {
@@ -68,11 +68,11 @@ function Hra() {
                 }
             });
         }
-        if (window.location.hostname != "localhost") {
+        // if (window.location.hostname != "localhost") {
             serverDomain = "https://quotepy.pythonanywhere.com";
-        } else {
-            serverDomain = "http://127.0.0.1:5000";
-        }
+        // } else {
+        //     serverDomain = "http://127.0.0.1:5000";
+        // }
         if (!window) return;
 
         window.addEventListener('keydown', function(event) {
