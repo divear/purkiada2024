@@ -176,10 +176,29 @@ th {
 	bottom: 1%;
 }
 
+.hover-button{
+	background-image: linear-gradient(
+		-225deg,
+		var(--prim) 0%,
+		var(--hover) 100%
+	);
+	background-size: auto auto;
+	background-clip: border-box;
+	background-size: 200% auto;
+	color: #fff;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: textclip 2.5s linear infinite;
+	display: inline-block;
+	font-size: 4rem;
+	padding: 1vw;
+	margin: 0;
+}
 .animate-character {
 	background-image: linear-gradient(
 		-225deg,
-		#e4e3ff 0%,
+		#FFE9E9 0%,
 		#ff69ec 33%,
 		#fff8e2 66%,
 		#f4a1e6 100%

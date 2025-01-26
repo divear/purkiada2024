@@ -247,7 +247,7 @@ function Hra() {
         placeholder="Write your code here..."
         style={{
             width: '100%',
-            height: '100%',
+            height: 100,
             background: 'transparent',
             color: 'transparent', // Ensure text doesn't interfere
             caretColor: '#fff', // Make caret (cursor) visible
