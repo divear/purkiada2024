@@ -52,7 +52,6 @@ function Hra() {
 
     const size = useWindowSize();
     useEffect(() => {
-        console.log(data)
         setCodeVal(data[level].wrongCode)
         setErrorsList(data[level].errors)
         setUsername(localStorage.getItem("username") || "notfound")
@@ -102,6 +101,11 @@ function Hra() {
     async function next() {
         setModal(false)
         if (!data[level + 1]) {
+            const response = await fetch(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`, {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+                // body: JSON.stringify([username, password, 0]),
+            });
             window.location.href = "/win"
             return
         }
@@ -114,16 +118,12 @@ function Hra() {
             });
         }
         setCodeVal(data[level + 1].wrongCode)
-        console.log(level)
         const temp = level + 1
         setLevel(temp)
         setErrorsList(data[temp].errors)
-        console.log(level + 1)
-        console.log(data[level].wrongCode)
 
         // set errors
         for (let i = 1; i < 11; i++) {
-            console.log(level)
 
             data[level + 1].errors.forEach(e => {
                 if ((e[0] as any).includes(i)) {
@@ -131,7 +131,6 @@ function Hra() {
                     setErrors(errors)
                 }
             });
-            console.log(errors)
         }
 
         const response = await fetch(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`, {
