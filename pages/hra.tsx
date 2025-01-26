@@ -4,6 +4,10 @@ import data from "./data.json"
 import { app, getFirestore, addDoc, collection } from "../components/firebase";
 import hljs from "highlight.js";
 import "highlight.js/styles/default.css";
+import TextareaAutosize from 'react-textarea-autosize';
+import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { relative } from 'path';
 
 var serverDomain: string;
 function useWindowSize() {
@@ -130,12 +134,12 @@ function Hra() {
             console.log(errors)
         }
 
-        // const response = await fetch(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`, {
-        //     method: "GET",
-        //     headers: { "Content-Type": "application/json" },
-        //     // body: JSON.stringify([username, password, 0]),
-        // });
-        // console.log(response)
+        const response = await fetch(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+            // body: JSON.stringify([username, password, 0]),
+        });
+        console.log(response)
         console.log(`${serverDomain}/login?username=${username}&password=${password}&points=${level + 1}`)
     }
 
@@ -179,17 +183,9 @@ function Hra() {
 
 
 
-  useEffect(() => {
-    hljs.highlightAll();
-   const code = "console.log('Highlighted Code')"
-   const highlightedCode = hljs.highlight(code , { language: 'javascript' }).value
-    setCodeVal(highlightedCode)
-  }, []);
     return (
         <div>
 
-             <div
-              />
 
             <title>Purkiáda bug hunt</title>
             <h1 className='levelNum'>Level {level}</h1>
@@ -212,15 +208,63 @@ function Hra() {
                     </ol>
                 </div >
 
-                <div className="textarea">
-                    <textarea
-
-            onChange={e => change(e)} spellCheck={false} value={codeVal} name="" id="" cols={size && size.width > 780 ? 45 : 40} rows={9}></textarea>
-                </div>
                 <button onClick={reset} className="reset">
                     ⟳
                 </button>
-            </div >
+            </div>
+
+<div style={{ position: 'absolute', left: "50px", width: '100%', maxWidth: '800px', minHeight: '308px' }}>
+    {/* Syntax Highlighter */}
+    <SyntaxHighlighter
+        language={data[level].name.toLowerCase()}
+        style={atomOneDark}
+        customStyle={{
+            margin: 0,
+            position: 'absolute',
+            pointerEvents: 'none', // Prevent blocking interaction with the textarea
+            width: '100%',
+            height: '100%',
+            overflow: 'hidden',
+            whiteSpace: 'pre-wrap',
+            wordWrap: 'break-word',
+            fontFamily: 'monospace',
+            fontSize: '32px', // Match font size
+            lineHeight: '1.2', // Match line height
+            padding: '0px 5px', // Match padding
+            boxSizing: 'border-box', // Ensure dimensions include padding
+            border: 'none',
+            outline: 'none'
+
+        }}
+    >
+        {codeVal || ' '}
+    </SyntaxHighlighter>
+
+    {/* Transparent Textarea */}
+    <TextareaAutosize
+          spellCheck="false"
+        value={codeVal}
+        onChange={e => change(e)}
+        placeholder="Write your code here..."
+        style={{
+            width: '100%',
+            height: '100%',
+            background: 'transparent',
+            color: 'transparent', // Ensure text doesn't interfere
+            caretColor: '#fff', // Make caret (cursor) visible
+            border: 'none', // Remove border to avoid misalignment
+            fontFamily: 'monospace',
+            fontSize: '32px', // Match font size
+            lineHeight: '1.2', // Match line height
+            padding: '0px 5px', // Match padding
+            boxSizing: 'border-box', // Ensure dimensions include padding
+            resize: 'none', // Prevent resizing
+            position: 'relative',
+            zIndex: 2, // Ensure it's above the SyntaxHighlighter for interaction
+            outline: 'none'
+        }}
+    />
+</div>
 
             <div className="errorLog">
                 <h2 className='errorsHeader'>Errory:</h2>

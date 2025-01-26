@@ -2,6 +2,8 @@
 	--bg: #8db7e8;
 	--sbg: #635f63;
 	--fr: #ffffff;
+  --prim: #506646;
+  --hover: #600000;
 }
 body {
 	background-color: var(--bg);
@@ -22,13 +24,16 @@ body {
 	text-align: center;
 }
 button {
-	background-color: #bd8de8;
+	background-color: var(--prim) ;
+  color: var(--fr);
 	/* border: none; */
 	font-size: 5rem;
 	cursor: pointer;
 	border-radius: 0.6vw;
 	border: 0px solid black;
+  animation: 
 }
+
 input {
 	width: 90%;
 	font-size: 2rem;
@@ -57,9 +62,9 @@ textarea {
 .container {
 	position: relative;
 	margin: 20px;
-	font-family: "Lucida Console", Monaco, monospace;
+	font-family: monospace;
 	line-height: 120%;
-	font-size: 2rem;
+	font-size: 32px;
 }
 .container .list {
 	position: absolute;
@@ -68,6 +73,8 @@ textarea {
 	z-index: 2;
 	width: 25px;
 	background-color: rgb(149, 149, 149);
+  color: #282C34;
+
 }
 .container .list ol {
 	margin: 0;
@@ -111,7 +118,7 @@ textarea {
   padding: 0.5vw;
 }
 .reset:hover {
-  background-color: #9f8fe7;
+  background-color: var(--hover);
   padding: 0.6vw;
 }
 .winModal {
@@ -128,7 +135,7 @@ textarea {
 	scale: 1.1;
 }
 .errorLineNum {
-	color: rgb(255, 141, 141);
+	color: #e60000;
 }
 .winText {
 	color: #ffffb2;
