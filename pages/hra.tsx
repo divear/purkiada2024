@@ -187,7 +187,7 @@ function Hra() {
 
 
             <title>Purkiáda bug hunt</title>
-            <h1 className='levelNum'>Level {level}</h1>
+            <h1 className='levelNum'>Level {level} - {data[level].name}</h1>
             <p className={isQwerty ? "" : "no"}>Protip: tyhlencty počítače mají qwertz🤮</p>
 
             <div className={modal ? "winModal" : "no"}>
