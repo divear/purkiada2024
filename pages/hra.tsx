@@ -221,7 +221,7 @@ function Hra() {
             margin: 0,
             position: 'absolute',
             pointerEvents: 'none', // Prevent blocking interaction with the textarea
-            width: '100%',
+            width: '120%',
             height: '100%',
             overflow: 'hidden',
             whiteSpace: 'pre-wrap',
@@ -246,7 +246,7 @@ function Hra() {
         onChange={e => change(e)}
         placeholder="Write your code here..."
         style={{
-            width: '100%',
+            width: '120%',
             height: 100,
             background: 'transparent',
             color: 'transparent', // Ensure text doesn't interfere
@@ -275,14 +275,7 @@ function Hra() {
                     })}
                 </ul>
             </div>
-            <div className="igText">
-                <p>V případě problemů nám můžeš napsat i na ig: </p>
-                <ul>
-                    <li>@lukas.ode</li>
-                    <li>@jiriukropec</li>
-                </ul>
-            </div>
-            <a target='_blank' className='napoveda' href="https://znakynaklavesnici.cz/">Jak psát znaky na klávesnici (kdo potřebuje)</a>
+            <a target='_blank' className='napoveda' href="https://znakynaklavesnici.cz/">Jak psát znaky na klávesnici</a>
         </ div >
     )
 }

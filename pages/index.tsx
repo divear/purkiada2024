@@ -13,11 +13,11 @@ export default function Home() {
 
 
 	useEffect(() => {
-		if (window.location.hostname != "localhost") {
+		// if (window.location.hostname != "localhost") {
 			serverDomain = "https://quotepy.pythonanywhere.com";
-		} else {
-			serverDomain = "http://127.0.0.1:5000";
-		}
+		// } else {
+		// 	serverDomain = "http://127.0.0.1:5000";
+		// }
 		if (!window) return;
 	}, []);
 
@@ -28,7 +28,7 @@ export default function Home() {
 		console.log(password)
 
       //remove after showoff
-			location.href = "/hra"
+			// location.href = "/hra"
 
 		try {
 			console.log("startin")

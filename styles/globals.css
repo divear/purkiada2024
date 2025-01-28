@@ -112,7 +112,7 @@ textarea {
 .reset {
 	position: fixed;
 	top: 7%;
-  right: 45%;
+  left: 50%;
   border: none;
   z-index: 9;
   padding: 0.5vw;
@@ -120,6 +120,9 @@ textarea {
 .reset:hover {
   background-color: var(--hover);
   padding: 0.6vw;
+}
+.winImg {
+  border-radius: 4vw;
 }
 .winModal {
 	background-color: var(--sbg);
@@ -149,16 +152,18 @@ textarea {
 	text-align: center;
 	left: 50%;
 	transform: translateX(-50%);
+  font-size: 1rem;
 }
 td {
 	border: 1px solid rgba(255, 255, 255, 0.207);
 	padding: 0.2vh 1vw;
-	border-radius: 0.3vw;
+	border-radius: 0.1vw;
 }
 td:hover {
 	border: 1px solid rgba(255, 255, 255, 0.207);
 	padding: 0.2vh 1vw;
-	color: #bab8e1;
+	background-color: #bab8e1;
+	color: #635F63;
 }
 .winImg {
 	width: 15vw;

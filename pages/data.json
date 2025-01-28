@@ -5,8 +5,18 @@
 		"rightCode": "#include <stdio.h>\nint main() {\n  printf(\"Ahoj, Purkiádo!\");\n  return 0;\n}",
 		"errors": [[[3, 4], "Každý řádek musí končit středníkem"]]
 	},
-
-
+	{
+		"name": "PHP",
+		"wrongCode": "<?php\n\necho \"Hello World;\n?>",
+		"rightCode": "<?php\n\necho \"Hello World\";\n?>",
+		"errors": [[[2], "Chybí uzavírací uvozovky textového řetězce"]]
+	},
+{
+		"name": "CPP",
+		"wrongCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n  cout << \"Hello, world! << endl;\n  return 0;\n}",
+		"rightCode": "#include <iostream>\nusing namespace std;\n\nint main() {\n  cout << \"Hello, world!\" << endl;\n  return 0;\n}",
+		"errors": [[[4], "Chybí uzavírací uvozovky u textového řetězce"]]
+	},
 	{
 		"name": "C",
 		"wrongCode": "#include <stdio.h>\nint main() {\n  int number = 10;\n  if (number > 5) {\n    printf(\"Číslo je větší než pět);\n  }\n  return 0;\n}",
@@ -80,7 +90,7 @@
 	},
 
 	{
-		"name": "",
+		"name": "HTML",
 		"wrongCode": "<ul>\n    <li>Možnost A\n    <li>Možnost B\n        <ul>\n            <li>Podmožnost 1</li>\n            <li>Podmožnost 2</li>\n        \n    </li>\n</ul>",
 		"rightCode": "<ul>\n    <li>Možnost A</li>\n    <li>Možnost B\n        <ul>\n            <li>Podmožnost 1</li>\n            <li>Podmožnost 2</li>\n        </ul>\n    </li>\n</ul>",
 		"errors": [

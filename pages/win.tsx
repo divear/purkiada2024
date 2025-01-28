@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
-import trophy from "../components/imgs/trophy.gif"
+import trophy from "../components/imgs/trophy.jpg"
 
 function Win() {
     return (
         <div className='intro'>
-            <Image className='winImg' src={trophy} alt="trofie" width={100} height={100} />
+            <Image className='winImg' src={trophy} alt="trofie"  />
 
             <h1 className='winText' >Vyhrál jsi</h1>
             <p>Máš maximální počet bodů z této úlohy, hodně štěstí s ostatními.</p>
@@ -30,6 +30,11 @@ function Win() {
                             <td>Backend </td>
                             <td>Jiří Ukropec</td>
                             <td>@jiriukropec</td>
+                        </tr>
+                        <tr>
+                            <td>Ilustrace</td>
+                            <td>Linda Vašíčková</td>
+                            <td>@linda.vasickova</td>
                         </tr>
                     </tbody>
                 </table >
